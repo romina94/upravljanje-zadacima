@@ -1,0 +1,147 @@
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 20px;
+}
+
+html {
+  color: whitesmoke;
+  font-family: "Handlee", sans-serif;
+  background: url("/public/closeup-shot-white-small-pebbles-background.jpg");
+  background-size: cover;
+}
+@media screen and (max-width: 767px) {
+  html {
+    background-size: auto;
+    background-position: center;
+  }
+}
+html #root {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 35px 38px;
+  margin: auto;
+}
+html #root h1 {
+  font-size: 40px;
+}
+html #root form {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+html #root input {
+  background-color: transparent;
+  color: whitesmoke;
+  font-family: "Handlee", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid whitesmoke;
+  border-radius: 20px;
+}
+html #root input.search {
+  margin-left: 5px;
+}
+@media screen and (max-width: 767px) {
+  html #root input.search {
+    margin-top: 5px;
+    margin-left: 0;
+  }
+}
+html #root input:focus-visible {
+  outline: 0;
+}
+html #root button {
+  font-family: "Handlee", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 2px 15px;
+}
+html #root a {
+  color: whitesmoke;
+  display: block;
+}
+html #root .logged-out-wrapper {
+  width: 270px;
+}
+html #root .logged-in-wrapper {
+  width: 700px;
+}
+@media screen and (max-width: 767px) {
+  html #root .logged-in-wrapper {
+    width: 280px;
+    height: 600px;
+    overflow: auto;
+    padding-right: 5px;
+  }
+}
+html #root .logged-in-wrapper #modal-overlay {
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  width: auto;
+  height: auto;
+}
+html #root .logged-in-wrapper #modal-overlay.active {
+  display: block;
+}
+html #root .logged-in-wrapper #modal-overlay .modal {
+  background: black;
+  border: 1px solid whitesmoke;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 0 25px 30px;
+}
+html #root .logged-in-wrapper .tasks-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  html #root .logged-in-wrapper .tasks-columns {
+    grid-template-columns: 1fr;
+  }
+}
+html #root .logged-in-wrapper .tasks-columns .tasks {
+  height: 250px;
+  overflow-y: auto;
+  padding-right: 3px;
+}
+html #root .logged-in-wrapper .tasks-columns .tasks .task {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+html #root .logged-in-wrapper .tasks-columns .tasks .task h4 {
+  font-weight: 100;
+  padding-bottom: 15px;
+  margin: 0;
+}
+html #root .logged-in-wrapper .tasks-columns .tasks .task button {
+  font-size: 14px;
+}/*# sourceMappingURL=App.css.map */

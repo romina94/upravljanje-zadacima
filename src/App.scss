@@ -1,0 +1,169 @@
+$primary-color: whitesmoke;
+$secondary-color: black;
+$overlay: rgba(0,0,0,0.7);
+$main-font-family: 'Handlee', sans-serif;
+$border-radius: 20px;
+
+$screen-xs-max: 767px;
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: $secondary-color;
+    border-radius: $border-radius;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $primary-color;
+    border-radius: $border-radius;
+}
+
+html {
+    color: $primary-color;
+    font-family: $main-font-family;
+    background: url("/public/closeup-shot-white-small-pebbles-background.jpg");
+    background-size: cover;
+
+    @media screen and (max-width: $screen-xs-max) {
+        background-size: auto;
+        background-position: center;
+    }
+
+    #root {
+        background: $overlay;
+        border-radius: $border-radius;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 0 35px 38px;
+        margin: auto;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        form {
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+        }
+
+        input {
+            background-color: transparent;
+            color: $primary-color;
+            font-family: $main-font-family;
+            font-size: 20px;
+            text-align: center;
+            border: 1px solid $primary-color;
+            border-radius: $border-radius;
+
+            &.search {
+                margin-left: 5px;
+
+                @media screen and (max-width: $screen-xs-max) {
+                    margin-top: 5px;
+                    margin-left: 0;
+                }
+            }
+
+            &:focus-visible {
+                outline: 0;
+            }
+        }
+
+        button {
+            font-family: $main-font-family;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: $border-radius;
+            padding: 2px 15px;
+        }
+
+        a {
+            color: $primary-color;
+            display: block;
+        }
+
+        .logged-out-wrapper {
+            width: 270px;
+        }
+
+        .logged-in-wrapper {
+            width: 700px;
+
+            @media screen and (max-width: $screen-xs-max) {
+                width: 280px;
+                height: 600px;
+                overflow: auto;
+                padding-right: 5px;
+            }
+
+            #modal-overlay {
+                display: none;
+                background: $overlay;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: $border-radius;
+                width: auto;
+                height: auto;
+
+                &.active {
+                    display: block;
+                }
+
+                .modal {
+                    background: $secondary-color;
+                    border: 1px solid $primary-color;
+                    border-radius: $border-radius;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 300px;
+                    padding: 0 25px 30px;
+                }
+            }
+
+            .tasks-columns {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 10px;
+                padding-bottom: 20px;
+
+                @media screen and (max-width: $screen-xs-max) {
+                    grid-template-columns: 1fr;
+                }
+
+                .tasks {
+                    height: 250px;
+                    overflow-y: auto;
+                    padding-right: 3px;
+
+                    .task {
+                        background-color: $overlay;
+                        border-radius: $border-radius;
+                        padding: 10px;
+                        margin-bottom: 15px;
+    
+                        h4 {
+                            font-weight: 100;
+                            padding-bottom: 15px;
+                            margin: 0;
+                        }
+    
+                        button {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
